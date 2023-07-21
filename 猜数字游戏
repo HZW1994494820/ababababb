@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+void menu()//目录
+{
+	printf("*******************\n");
+	printf("** 1.play 0.exit **\n");
+	printf("*******************\n");
+}
+void game()
+{
+	//1.生成一个随机数
+	int ret = 0;
+	ret = rand() % 100 + 1;
+	//2.猜数字
+	while (1)
+	{
+		int a = 0;
+		scanf_s("%d", &a);
+		if (a < ret)
+		{
+			printf("猜小了\n");
+		}
+		else if (a > ret)
+		{
+			printf("猜大了\n");
+		}
+		else
+		{
+			printf("猜对了\n");
+			break;
+		}
+	}
+}
+int main()
+{
+	int input = 0;
+	srand((unsigned int)time(NULL));//时间起点函数只调用一次，不要频繁的调用！！！
+	do
+	{
+		menu();
+		printf("请选择>:");
+		scanf_s("%d", &input);
+		switch (input)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("退出游戏\n");
+			break;
+		default:
+			printf("请重新选择\n");
+			break;
+		}
+	} while (input);
+	return 0;
+}
