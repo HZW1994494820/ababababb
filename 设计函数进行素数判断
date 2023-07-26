@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+int is_prime(int n)//定义函数
+{
+	int j = 0;
+	for (j = 2; j <= n / 2; j++)
+	{
+		if (n % j == 0)
+		{
+			return 0;
+		}
+	}
+	if (n/2 < j)
+	{
+		return 1;
+	}
+}
+int main()
+{
+	int i = 1;
+	for (i = 1; i <= 100; i+=2)
+	{
+		if (is_prime(i) == 1)
+			printf("%d\n", i);
+	}
+	return 0;
+}
