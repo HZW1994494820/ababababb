@@ -1,0 +1,39 @@
+#include<stdio.h>
+int dinary(int arr[], int sz, int k)
+{
+	int left = 0;
+	int right = sz - 1;
+	while (left <= right)
+	{
+		int mid = (left + right) / 2;
+		if (k < arr[mid])
+		{
+			right = mid-1;
+		}
+		else if (k > arr[mid])
+		{
+			left = mid+1;
+		}
+		else
+		{
+			return mid;
+		}
+	}
+		return -1;
+}
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9, };
+	int k = 4;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int ret = dinary(arr, sz, k);
+	if (-1 == ret)
+	{
+		printf("查无次数\n");
+	}
+	else
+	{
+		printf("查到了，此数下标为%d\n", ret);
+	}
+	return 0 ;
+}
