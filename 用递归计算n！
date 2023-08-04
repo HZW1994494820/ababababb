@@ -1,0 +1,15 @@
+#include<stdio.h>
+int my_strlen(int n)
+{
+	if (1 != n)
+	{
+		return n*my_strlen(n - 1);
+	}
+}
+int main()
+{
+	int n = 0;
+	scanf_s("%d", &n);
+	int len = my_strlen(n);
+	printf("%d\n", len);
+}
