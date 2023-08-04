@@ -1,0 +1,29 @@
+#include<stdio.h>
+int fib(int n)
+{
+	int a = 1;
+	int b = 1;
+	int c = 0;
+	if (n <= 2)
+	{
+		return 1;
+	}
+	else if(n > 2)
+	{
+		while (2 < n)
+		{
+			c = a + b;
+			a = b;
+			b = c;
+			n--;
+		}
+	}
+	return c;
+}
+int main()
+{
+	int n = 0;
+	scanf_s("%d", &n);
+	int len = fib(n);
+	printf("%d\n", len);
+}
